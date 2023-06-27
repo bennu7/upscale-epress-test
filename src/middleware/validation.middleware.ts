@@ -65,7 +65,7 @@ const ValidationMessage = (
     result.push(error.msg);
   });
 
-  logger.info(
+  logger.error(
     `${req.method} ${STATUS.BAD_REQUEST} ${req.originalUrl} : ${result}`
   );
 

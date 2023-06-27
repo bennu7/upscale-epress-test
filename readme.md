@@ -77,4 +77,27 @@ npm run test
 
 that's below example if success running test
 
-<img src="./src/test/success.png" alt="image" width="600"/>
+<img src="./src/test/success.png" alt="example success testing" width="600"/>
+
+#### For handling error, we can monitoring from folder logs using package winston. I wrote 1 file is error.log. So we can monitoring all errors both errors from users and from internal code. This below example error in log :
+
+```log
+6/27/23, 06:06:02 GMT+7 error: BUG CONFIG DB : SequelizeConnectionError: authSwitch.authSwitchRequestMoreData is not a function 
+6/27/23, 06:06:42 GMT+7 error: BUG CONFIG DB : SequelizeConnectionError: authSwitch.authSwitchRequestMoreData is not a function 
+6/27/23, 06:07:20 GMT+7 error: BUG CONFIG DB : SequelizeConnectionError: authSwitch.authSwitchRequestMoreData is not a function 
+6/27/23, 06:08:56 GMT+7 error: BUG INTERNAL : Error: Oops! id task not found 
+6/27/23, 06:09:36 GMT+7 error: BUG INTERNAL : Error: Oops! id task not found 
+6/27/23, 06:25:08 GMT+7 error: BUG INTERNAL : Error: Oops! id task not found 
+6/27/23, 06:26:24 GMT+7 error: BUG INTERNAL : Error: Oops! id task not found 
+6/27/23, 06:51:39 GMT+7 error: BUG INTERNAL : Error: Oops! id task not found 
+6/27/23, 06:52:43 GMT+7 error: BUG INTERNAL : DELETE 400 /api/v1/tasks/756d8097-03b8-400b-9a9a-e83bc8aa71fb : Error: Oops! id task not found 
+6/27/23, 06:57:06 GMT+7 error: BUG INTERNAL DELETE 404 /api/v1/tasks/756d8097-03b8-400b-9a9a-e83bc8aa71fb : Error: Oops! id task not found 
+6/27/23, 07:08:17 GMT+7 error:  DELETE 404 /api/v1/tasks/756d8097-03b8-400b-9a9a-e83bc8aa71fb : Error: Oops! id task not found 
+6/27/23, 07:08:37 GMT+7 error: null DELETE 404 /api/v1/tasks/756d8097-03b8-400b-9a9a-e83bc8aa71fb : Error: Oops! id task not found 
+6/27/23, 07:08:57 GMT+7 error:  DELETE 404 /api/v1/tasks/756d8097-03b8-400b-9a9a-e83bc8aa71fb : Error: Oops! id task not found 
+6/27/23, 07:09:46 GMT+7 error:  DELETE 404 /api/v1/tasks/756d8097-03b8-400b-9a9a-e83bc8aa71fb : Error: Oops! id task not found 
+6/27/23, 07:15:08 GMT+7 error:  DELETE 404 /api/v1/tasks/756d8097-03b8-400b-9a9a-e83bc8aa71fb : Error: Oops! id task not found 
+6/27/23, 07:16:28 GMT+7 error:  DELETE 404 /api/v1/tasks/756d8097-03b8-400b-9a9a-e83bc8aa71fb : Error: Oops! id task not found 
+6/27/23, 07:20:12 GMT+7 error: DELETE 404 /api/v1/tasks/756d8097-03b8-400b-9a9a-e83bc8aa71fb : Error: Oops! id task not found 
+6/27/23, 07:20:57 GMT+7 error: DELETE 404 /api/v1/tasks/756d8097-03b8-400b-9a9a-e83bc8aa71fb : Error: Oops! id task not found 
+```

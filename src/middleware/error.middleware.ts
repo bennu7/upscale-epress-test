@@ -31,7 +31,6 @@ const ErrorMiddleware = async (
     console.log("🪓🪓  ERROR.PARENT ->", err.parent + " <- 🪓🪓");
     console.log("😡😡 error.code => :", err.code);
     console.log("😡😡 error :", err);
-    logger.error(`BUG INTERNAL : ${err}`);
 
     if (err.statusCode === 413) {
       return sendHttpJson(
@@ -59,6 +58,11 @@ const ErrorMiddleware = async (
 
     const status_code = err.code || STATUS.INTERNAL_SERVER_ERROR;
     const message = err.message || "INTERNAL_SERVER_ERROR";
+
+    const valueBug = Number(status_code) !== 500 ? "" : "BUG INTERNAL : ";
+    logger.error(
+      `${valueBug} ${req.method} ${status_code} ${req.originalUrl} : ${err}`
+    );
 
     return sendHttpJson(res, status_code as number, message);
   } catch (err) {

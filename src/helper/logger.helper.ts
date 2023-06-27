@@ -11,7 +11,7 @@ const timezoned = (): string => {
 };
 
 export const logger: Logger = winston.createLogger({
-  level: "info",
+  level: "error",
   format: winston.format.combine(
     // winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
     winston.format.timestamp({ format: timezoned }),
@@ -25,6 +25,6 @@ export const logger: Logger = winston.createLogger({
       filename: "logs/error.log",
       level: "error",
     }),
-    new winston.transports.File({ filename: "logs/info.log" }),
+    // new winston.transports.File({ filename: "logs/info.log", level: "info" }),
   ],
 });
